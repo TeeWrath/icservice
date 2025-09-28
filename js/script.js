@@ -36,7 +36,7 @@ function showModal(formName) {
     const modalMessage = document.getElementById('modal-message');
     
     modalTitle.textContent = 'Inquiry Received!';
-    modalMessage.textContent = `Thank you for submitting the ${formName}. A PAIC representative will contact you shortly to follow up on your request.`;
+    modalMessage.textContent = `Thank you for submitting the ${formName}. A ICS representative will contact you shortly to follow up on your request.`;
     
     // Show modal and apply fade/scale transition
     modal.classList.remove('hidden');
