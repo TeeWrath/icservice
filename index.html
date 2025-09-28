@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Abraham Immigration Consulting - Your home for new beginnings</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Custom styles */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero image with dark overlay */
+        .hero-bg {
+            background-image: url('https://placehold.co/1200x600/0b1c3c/ffffff?text=Canadian+Flag+and+Mountain+Background');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Custom style for the large contact form's grid structure */
+        .contact-form-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default to single column on mobile */
+        }
+        @media (min-width: 768px) {
+            .contact-form-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two columns on desktop */
+            }
+        }
+
+        /* Input styling */
+        input:not([type="submit"]), select, textarea {
+            @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <!-- Replace with an actual logo -->
+                <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+                    <i data-lucide="globe" class="text-white w-4 h-4"></i>
+                </div>
+                <a href="#" class="text-xl font-bold text-gray-900">Paul Abraham Consulting</a>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                <a href="#hero" class="text-gray-600 hover:text-blue-600 transition">Our Consultant</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition">Services</a>
+                <a href="#why-paic" class="text-gray-600 hover:text-blue-600 transition">Why PAIC</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition">Clients</a>
+                <a href="#contact-us" class="text-gray-600 hover:text-blue-600 transition">Contact Us</a>
+                <span class="text-gray-600">|</span>
+                <select class="border-none text-gray-600 focus:outline-none">
+                    <option>INR</option>
+                    <option>USD</option>
+                    <option>CAD</option>
+                </select>
+                <a href="#" class="px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition shadow-lg">Pay Now</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 rounded-md hover:bg-gray-100 transition">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-white shadow-xl py-4 z-40">
+            <div class="flex flex-col space-y-3 px-4 text-center">
+                <a href="#hero" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-gray-50 rounded-md">Our Consultant</a>
+                <a href="#services" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-gray-50 rounded-md">Services</a>
+                <a href="#why-paic" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-gray-50 rounded-md">Why PAIC</a>
+                <a href="#testimonials" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-gray-50 rounded-md">Clients</a>
+                <a href="#contact-us" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-gray-50 rounded-md">Contact Us</a>
+                <a href="#" class="py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Pay Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section with Quick Contact Form -->
+        <section id="hero" class="hero-bg py-20 md:py-32 relative flex items-center">
+            <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-start lg:justify-between">
+                <!-- Text Content -->
+                <div class="lg:w-1/2 text-white mb-10 lg:mb-0">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                        Paul Abraham <br> Immigration Consulting
+                    </h1>
+                    <p class="mt-4 text-xl sm:text-2xl font-light text-blue-100">
+                        Your home for new beginnings
+                    </p>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#contact-us" class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition shadow-xl">Contact us</a>
+                        <a href="#services" class="px-6 py-3 border border-white text-white rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">View Programs</a>
+                    </div>
+                </div>
+
+                <!-- Quick Contact Form -->
+                <div class="lg:w-5/12 p-6 md:p-8 bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Get In Touch For a Quick Response</h2>
+                    <form onsubmit="handleFormSubmit(event, 'Quick Contact Form')">
+                        <div class="contact-form-grid">
+                            <div>
+                                <label for="first-name-quick" class="block text-sm font-medium text-gray-700">First Name *</label>
+                                <input type="text" id="first-name-quick" name="firstName" placeholder="Enter First Name" required>
+                            </div>
+                            <div>
+                                <label for="last-name-quick" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                                <input type="text" id="last-name-quick" name="lastName" placeholder="Enter Last Name" required>
+                            </div>
+                            <div>
+                                <label for="email-quick" class="block text-sm font-medium text-gray-700">Email *</label>
+                                <input type="email" id="email-quick" name="email" placeholder="Enter Email" required>
+                            </div>
+                            <div>
+                                <label for="country-quick" class="block text-sm font-medium text-gray-700">Country of Residence *</label>
+                                <select id="country-quick" name="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="US">USA</option>
+                                    <option value="IN">India</option>
+                                    <option value="AE">UAE</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="phone-quick" class="block text-sm font-medium text-gray-700">Phone Number *</label>
+                            <div class="flex">
+                                <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-lg">+1</span>
+                                <input type="tel" id="phone-quick" name="phone" placeholder="Enter Phone Number" class="rounded-none rounded-r-lg" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-6 w-full px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Statistics Bar -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-10">Best Gateway to Canada</h2>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                    <div class="flex flex-col items-center">
+                        <p class="text-4xl font-bold text-blue-600">30+</p>
+                        <p class="text-sm text-gray-600 mt-1">Years of Experience</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="text-4xl font-bold text-blue-600">1345+</p>
+                        <p class="text-sm text-gray-600 mt-1">Approved Applications</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="text-4xl font-bold text-blue-600">98%</p>
+                        <p class="text-sm text-gray-600 mt-1">Success Rate</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="text-4xl font-bold text-blue-600">120</p>
+                        <p class="text-sm text-gray-600 mt-1">Businesses Started</p>
+                    </div>
+                    <div class="flex flex-col items-center col-span-2 md:col-span-1">
+                        <p class="text-4xl font-bold text-blue-600">62</p>
+                        <p class="text-sm text-gray-600 mt-1">Different Nationalities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. What is PAIC Section (Two columns, text-left, image-right) -->
+        <section id="why-paic" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <!-- Text Content -->
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-extrabold text-gray-900 mb-6">What is PAIC</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Paul Abraham Immigration Consulting (PAIC) is an immigration company based in Halifax, Nova Scotia, Canada. The company is led by <strong class="text-blue-600">Paul Abraham</strong>, a widely respected <strong class="text-blue-600">Registered Canadian Immigration Consultant (RCIC)</strong> who has a tremendous record of assisting a wide variety of global applicants.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Our programs include <strong class="font-medium">Express Entry (EE)</strong>, <strong class="font-medium">Provincial Nomination Programs (PNPs)</strong>, Family Class Sponsorships, International Student programs, and <strong class="font-medium">Business Immigration programs</strong>.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#contact-us" class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition shadow-lg">Contact us</a>
+                            <a href="#services" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition">View programs</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Image -->
+                    <div class="md:w-1/2 mt-8 md:mt-0">
+                        <img src="https://placehold.co/600x400/eeeeee/333333?text=Professional+Consultation" alt="Consultants reviewing documents" class="w-full h-auto object-cover rounded-xl shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. How it works (Two columns, image-left, text-right) -->
+        <section class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <!-- Image -->
+                    <div class="md:w-1/2 order-2 md:order-1 mt-8 md:mt-0">
+                        <img src="https://placehold.co/600x400/eeeeee/333333?text=Smiling+Client+Consultation" alt="Client being advised by consultant" class="w-full h-auto object-cover rounded-xl shadow-xl">
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <h2 class="text-4xl font-extrabold text-gray-900 mb-6">How it works</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            PAIC offers end-to-end support and services for Canadian Immigration. We also assist with the business pathway, including programs like <strong class="font-medium">EB5 for the USA</strong>, and <strong class="font-medium">EU Citizenship by Investment</strong>.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Our RCIC Paul Abraham guides applicants through the entire process, ensuring ethical and honest consultation while managing planning, documentation, and adhering to the many terms, conditions, and formalities expected worldwide. We ensure every step is clear and well-executed.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#contact-us" class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition shadow-lg">Contact us</a>
+                            <a href="#services" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition">View programs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. PAIC Immigration Services -->
+        <section id="services" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-12">PAIC Immigration Services</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 text-left">
+                    <!-- Service Column 1: Express Entry -->
+                    <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Express Entry</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="hover:text-blue-600">Check Express Entry Eligibility</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Latest Express Entry Draw</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Healthcare Express Entry Draws</a></li>
+                            <li><a href="#" class="hover:text-blue-600">CEC Express Entry Draws</a></li>
+                            <li><a href="#" class="hover:text-blue-600">PNP Express Entry Draws</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Minimum IELTS Score</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Service Column 2: Canada Study Visa -->
+                    <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Canada Study Visa</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="hover:text-blue-600">Scholarships for International Students</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Educational Credential Assessment (ECA)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">2 Years PG Diploma Courses</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Canada Schooling Visa With Parents</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Top DLI College In Canada</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Column 3: Skilled Worker to NOC Code -->
+                    <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Skilled Worker to - NOC Code</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="hover:text-blue-600">International Nurses (NOC 3012)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Licensed Practical Nurses (LPN - NOC 32101)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Dental Assistant (NOC 33100)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Doctors ( NOC 31102)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Plastics Machine Operators (NOC Code-94111)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Column 4: Apply PR from Outside Canada -->
+                    <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Apply PR from Outside Canada</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="hover:text-blue-600">Sweden</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Sri Lanka</a></li>
+                            <li><a href="#" class="hover:text-blue-600">New Zealand</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Canada Vs New Zealand</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Germany</a></li>
+                            <li><a href="#" class="hover:text-blue-600">UAE</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Column 5: Canada Immigration Draws -->
+                    <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Canada Immigration Draws</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="hover:text-blue-600">Ontario Latest Draw</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Saskatchewan Latest Draw</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Alberta PNP Latest Draw</a></li>
+                            <li><a href="#" class="hover:text-blue-600">British Columbia Latest Draw</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Nova Scotia PNP Draw</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">More Immigration Resources</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                        <!-- Documents -->
+                        <div class="p-6 bg-white rounded-xl shadow-md">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-3">Documents</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><a href="#" class="hover:text-blue-600">Medical Exam For Canada PR</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Police Clearance Certificate</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Educational Credential Assessment</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Reference Letter For Canada PR</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Immigration Tips -->
+                        <div class="p-6 bg-white rounded-xl shadow-md">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-3">Immigration Tips</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><a href="#" class="hover:text-blue-600">Common Pitfalls in Canada Immigration</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Birthright Citizenship in Canada</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Implied Status Canada</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Visitor Visa To Work Permit</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Other Programs -->
+                        <div class="p-6 bg-white rounded-xl shadow-md">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-3">Other Immigration Programs</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><a href="#" class="hover:text-blue-600">Canada Startup Visa</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Global Talent Stream</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Owner Operator LMIA</a></li>
+                                <li><a href="#" class="hover:text-blue-600">Bridging Open Work Permit</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Happy Clients / Testimonials -->
+        <section id="testimonials" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-12">Our Happy Clients</h2>
+                
+                <div class="relative">
+                    <div id="testimonial-container" class="flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-4">
+                        <!-- Testimonial 1 -->
+                        <div class="flex-shrink-0 snap-center w-full md:w-1/2 lg:w-1/3 p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="https://placehold.co/50x50/34D399/ffffff?text=FB" alt="Faryal Balkhi" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Faryal Balkhi</p>
+                                    <div class="flex items-center text-sm text-yellow-500">
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500"></i>
+                                        <span class="ml-2 text-gray-500">3 months ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-left">I am very glad to be in touch with PAIC. PAIC's team is doing a great job. I have started my journey with PAIC in last year 2023 and till now I have come across multiple wonderful guys, like Ms. Aqsa, Leo and Jackson.</p>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="flex-shrink-0 snap-center w-full md:w-1/2 lg:w-1/3 p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="https://placehold.co/50x50/3B82F6/ffffff?text=JF" alt="Joseph Fynn" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Joseph Fynn</p>
+                                    <div class="flex items-center text-sm text-yellow-500">
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500"></i>
+                                        <span class="ml-2 text-gray-500">5 months ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-left">Every worker I have spoken to from PAIC has made me feel that my PR is assured. Larry, Jackson and the others are very nice, polite and professional. They have given me every information I need for a successful application and have also answered all my questions.</p>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="flex-shrink-0 snap-center w-full md:w-1/2 lg:w-1/3 p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="https://placehold.co/50x50/EF4444/ffffff?text=KM" alt="Kibrom Menasbo" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Kibrom Menasbo</p>
+                                    <div class="flex items-center text-sm text-yellow-500">
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500"></i>
+                                        <span class="ml-2 text-gray-500">6 months ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-left">Your team is always prompt, professional, and goes above and beyond to address any queries or concerns I may have. The knowledge and expertise demonstrated by your staff is truly commendable.</p>
+                        </div>
+
+                        <!-- Testimonial 4 (For scrolling demo) -->
+                        <div class="flex-shrink-0 snap-center w-full md:w-1/2 lg:w-1/3 p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="https://placehold.co/50x50/F59E0B/ffffff?text=AS" alt="Alex Smith" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Alex Smith</p>
+                                    <div class="flex items-center text-sm text-yellow-500">
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 mr-1"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500"></i>
+                                        <span class="ml-2 text-gray-500">1 month ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-left">The best decision I made was to trust PAIC with my application. The guidance provided was flawless, and I felt supported every step of the way. Highly recommended for anyone serious about their immigration goals!</p>
+                        </div>
+                    </div>
+
+                    <!-- Scroll Arrows (Desktop only, for visual cue) -->
+                    <button onclick="scrollTestimonials(-1)" class="hidden md:block absolute top-1/2 -left-4 transform -translate-y-1/2 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="scrollTestimonials(1)" class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Contact Us Section (Address on left, Detailed Form on right) -->
+        <section id="contact-us" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-12 border-b-2 border-blue-600 pb-3 inline-block">Contact Us</h2>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Contact Details -->
+                    <div class="lg:w-1/3 space-y-8 p-6 bg-gray-50 rounded-xl shadow-lg h-full">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold text-gray-800 flex items-center mb-4">
+                                <i data-lucide="map-pin" class="w-6 h-6 mr-3 text-blue-600"></i> Our Office
+                            </h3>
+                            <p class="text-gray-600 font-semibold">Paul Abraham Immigration Consulting</p>
+                            <p class="text-gray-600">650 Washmill Lake Drive</p>
+                            <p class="text-gray-600">Halifax, Nova Scotia, Canada B3S 0H8</p>
+                        </div>
+                        
+                        <div class="space-y-4 pt-4 border-t border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-800 flex items-center mb-4">
+                                <i data-lucide="phone" class="w-6 h-6 mr-3 text-blue-600"></i> Call Us
+                            </h3>
+                            <p class="text-gray-600"><a href="tel:+18007951352" class="hover:text-blue-600">+1-800-795-1352 (Toll Free)</a></p>
+                            <p class="text-gray-600"><a href="tel:+18007952027" class="hover:text-blue-600">+1-800-795-2027 (Support)</a></p>
+                        </div>
+
+                        <div class="space-y-4 pt-4 border-t border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-800 flex items-center mb-4">
+                                <i data-lucide="mail" class="w-6 h-6 mr-3 text-blue-600"></i> Email
+                            </h3>
+                            <p class="text-gray-600"><a href="mailto:contact@pa-ic.com" class="hover:text-blue-600">contact@pa-ic.com (General Inquiries)</a></p>
+                            <p class="text-gray-600"><a href="mailto:info@pa-ic.com" class="hover:text-blue-600">info@pa-ic.com (Information)</a></p>
+                            <p class="text-gray-600"><a href="mailto:complaints@pa-ic.com" class="hover:text-blue-600">complaints@pa-ic.com (Feedback)</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Consultation Form -->
+                    <div class="lg:w-2/3 p-6 bg-white rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Book Your Consultation</h3>
+                        <form onsubmit="handleFormSubmit(event, 'Detailed Consultation Form')">
+                            <div class="contact-form-grid">
+                                <!-- First Name -->
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                                    <input type="text" id="first-name" name="firstName" placeholder="Enter First Name" required>
+                                </div>
+                                <!-- Last Name -->
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                                    <input type="text" id="last-name" name="lastName" placeholder="Enter Last Name" required>
+                                </div>
+                                <!-- Current Age -->
+                                <div>
+                                    <label for="age" class="block text-sm font-medium text-gray-700">Current Age *</label>
+                                    <input type="number" id="age" name="age" placeholder="Age" required>
+                                </div>
+                                <!-- English Proficiency -->
+                                <div>
+                                    <label for="english-proficiency" class="block text-sm font-medium text-gray-700">English Proficiency Level *</label>
+                                    <select id="english-proficiency" name="englishProficiency" required>
+                                        <option value="">Select Level</option>
+                                        <option>CLB 9+</option>
+                                        <option>CLB 7-8</option>
+                                        <option>CLB 5-6</option>
+                                        <option>Below CLB 5</option>
+                                    </select>
+                                </div>
+                                <!-- Education -->
+                                <div>
+                                    <label for="education" class="block text-sm font-medium text-gray-700">Education *</label>
+                                    <select id="education" name="education" required>
+                                        <option value="">Select Education Level</option>
+                                        <option>PHD</option>
+                                        <option>Master's</option>
+                                        <option>Bachelor's</option>
+                                        <option>Diploma/Certificate</option>
+                                    </select>
+                                </div>
+                                <!-- Total Work Experience -->
+                                <div>
+                                    <label for="work-experience" class="block text-sm font-medium text-gray-700">Total Work Experience (Years) *</label>
+                                    <input type="number" id="work-experience" name="workExperience" placeholder="Years of Experience" required>
+                                </div>
+                                <!-- Occupation -->
+                                <div>
+                                    <label for="occupation" class="block text-sm font-medium text-gray-700">Occupation *</label>
+                                    <input type="text" id="occupation" name="occupation" placeholder="Current Occupation" required>
+                                </div>
+                                <!-- Email -->
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                                </div>
+                                <!-- Country of Residence -->
+                                <div>
+                                    <label for="country" class="block text-sm font-medium text-gray-700">Country of Residence *</label>
+                                    <select id="country" name="country" required>
+                                        <option value="">Select Country</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="US">USA</option>
+                                        <option value="IN">India</option>
+                                        <option value="AE">UAE</option>
+                                    </select>
+                                </div>
+                                <!-- Income Band -->
+                                <div>
+                                    <label for="income-band" class="block text-sm font-medium text-gray-700">Income Band (per month) *</label>
+                                    <select id="income-band" name="incomeBand" required>
+                                        <option value="">Select Income Band</option>
+                                        <option>0 - $2,000</option>
+                                        <option>$2,001 - $5,000</option>
+                                        <option>$5,001 - $10,000</option>
+                                        <option>$10,001+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Phone Number (Full Width) -->
+                            <div class="mt-6">
+                                <label for="phone-full" class="block text-sm font-medium text-gray-700">Phone Number *</label>
+                                <div class="flex">
+                                    <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-lg">+1</span>
+                                    <input type="tel" id="phone-full" name="phone" placeholder="Enter Phone Number" class="rounded-none rounded-r-lg" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="mt-8 w-full px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">
+                                Submit for Consultation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Submission Modal -->
+        <div id="status-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex items-center justify-center transition-opacity duration-300" onclick="closeModal(event)">
+            <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center" onclick="event.stopPropagation()">
+                <div id="modal-icon" class="mb-4 flex justify-center">
+                    <i data-lucide="check-circle" class="w-12 h-12 text-green-500"></i>
+                </div>
+                <h3 id="modal-title" class="text-xl font-bold text-gray-900 mb-3">Submission Successful!</h3>
+                <p id="modal-message" class="text-gray-600 mb-6">Thank you for your inquiry. A member of the PAIC team will contact you shortly.</p>
+                <button onclick="closeModal()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Close</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-gray-700 pb-8 mb-8">
+                
+                <!-- Col 1: Logo & Social -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+                            <i data-lucide="globe" class="text-white w-4 h-4"></i>
+                        </div>
+                        <p class="text-lg font-bold text-white">Paul Abraham Consulting</p>
+                    </div>
+                    <p class="text-gray-400 text-sm">Empowering your journey to a new life.</p>
+                    
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Canada Programs -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-blue-400">Canada Programs</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Canada Express Entry</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Canada Permanent Residence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Provincial - Canada Business</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Study Visa</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Provincial Nominee Program - 2025</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Useful Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-blue-400">Useful Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Our Immigration Consultant</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blogs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#contact-us" class="text-gray-400 hover:text-white transition">Contact us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">PAIC IELTS Learning</a></li>
+                    </ul>
+                    <a href="#" class="mt-6 inline-block text-sm px-4 py-2 border border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition">Enquire For Travel Insurance</a>
+                </div>
+
+                <!-- Col 4: Stay In Touch / Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-blue-400">Stay Always In Touch</h4>
+                    <p class="text-gray-400 text-sm mb-4">Get The Latest Updates on Canadian Immigration.</p>
+                    <form onsubmit="handleFormSubmit(event, 'Newsletter Signup')">
+                        <div class="flex space-x-2">
+                            <input type="email" name="email" placeholder="Enter email address" class="flex-grow p-3 text-gray-900 rounded-lg border-none focus:ring-blue-500" required>
+                            <button type="submit" class="px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="text-center md:flex justify-between items-center text-sm text-gray-400">
+                <p>© 2025 Paul Abraham Immigration Consulting. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">All legal advice during the process is provided by the Regulated Canadian Immigration Consultant. <strong class="text-blue-400">PAIC</strong> is an authorized agency of the RCIC.</p>
+            </div>
+            <div class="text-center mt-2 text-xs text-gray-500">
+                 <a href="#" class="hover:text-blue-400">Privacy Policy</a> | <a href="#" class="hover:text-blue-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp/Chat Icons (Fixed Position) -->
+    <a href="https://wa.me/18007951352" target="_blank" class="fixed bottom-6 right-6 p-3 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition z-50">
+        <i data-lucide="whatsapp" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMenu);
+
+
+        // 2. Form Submission Handling
+        function handleFormSubmit(event, formName) {
+            event.preventDefault();
+            
+            // In a real application, you would collect form data here:
+            // const formData = new FormData(event.target);
+            // const data = Object.fromEntries(formData.entries());
+            // console.log(`Form Submitted: ${formName}`, data);
+
+            // Simulate successful submission and show the modal
+            showModal(formName);
+
+            // Optionally reset the form
+            event.target.reset();
+        }
+
+        function showModal(formName) {
+            const modal = document.getElementById('status-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMessage = document.getElementById('modal-message');
+
+            modalTitle.textContent = 'Inquiry Received!';
+            modalMessage.textContent = `Thank you for submitting the ${formName}. A PAIC representative will contact you shortly to follow up on your request.`;
+            
+            modal.classList.remove('hidden');
+            // Add a subtle fade-in effect
+            setTimeout(() => modal.style.opacity = '1', 10);
+        }
+
+        function closeModal(event) {
+            if (event && event.target.id !== 'status-modal') return; // Prevent closing if clicking on the modal content
+            
+            const modal = document.getElementById('status-modal');
+            modal.style.opacity = '0';
+            setTimeout(() => modal.classList.add('hidden'), 300); // Wait for transition before hiding
+        }
+        
+        // Listener for the close button inside the modal
+        document.querySelector('#status-modal button').addEventListener('click', closeModal);
+
+
+        // 3. Testimonial Scrolling (for the arrow buttons)
+        function scrollTestimonials(direction) {
+            const container = document.getElementById('testimonial-container');
+            const scrollAmount = container.clientWidth / 3; // Scroll one card at a time on desktop
+            
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
