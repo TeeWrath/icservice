@@ -8,8 +8,7 @@ body {
 
 /* Hero image with dark overlay */
 .hero-bg {
-    /* Using a high-contrast placeholder for visibility, ideally replaced by a professional, high-res image */
-    background-image: url('https://placehold.co/1200x600/0b1c3c/ffffff?text=Professional+Immigration+Consulting'); 
+    background-image: url('../assets/header.jpg'); 
     background-size: cover;
     background-position: center;
 }
