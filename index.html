@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Immigration Consulting - Your home for new beginnings</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <!-- Link External CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-white shadow-lg">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-            <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center shadow-md">
                     <i data-lucide="globe" class="text-white w-5 h-5"></i>
@@ -23,45 +18,30 @@
                 <a href="#" class="text-xl font-extrabold text-gray-900 tracking-tight">Immigration Consulting</a>
             </div>
 
-            <!-- Desktop Nav Links -->
             <div class="hidden lg:flex items-center space-x-6 text-base font-medium">
                 <a href="#why-ICS" class="text-gray-600 hover:text-blue-600 hover:underline transition">Our Consultant</a>
                 <a href="#services" class="text-gray-600 hover:text-blue-600 hover:underline transition">Services</a>
                 <a href="#testimonials" class="text-gray-600 hover:text-blue-600 hover:underline transition">Clients</a>
                 <a href="#contact-us" class="text-gray-600 hover:text-blue-600 hover:underline transition">Contact Us</a>
-                <!-- <span class="text-gray-300">|</span>
-                <select class="border border-gray-200 text-gray-700 rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 transition">
-                    <option>INR</option>
-                    <option>USD</option>
-                    <option>CAD</option>
-                </select>
-                <a href="#" class="px-6 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition shadow-lg transform hover:scale-[1.02]">Pay Now</a>
-            </div> -->
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700 rounded-md hover:bg-gray-100 transition">
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700 rounded-md hover:bg-gray-100 transition">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </nav>
 
-        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-white shadow-2xl py-4 z-40 border-t border-gray-100">
             <div class="flex flex-col space-y-3 px-4 text-center">
                 <a href="#why-ICS" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-blue-50 rounded-lg">Our Consultant</a>
                 <a href="#services" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-blue-50 rounded-lg">Services</a>
                 <a href="#testimonials" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-blue-50 rounded-lg">Clients</a>
                 <a href="#contact-us" onclick="toggleMenu()" class="block py-2 text-gray-800 hover:bg-blue-50 rounded-lg">Contact Us</a>
-                <!-- <a href="#" class="mt-2 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">Pay Now</a> -->
-            </div>
+                </div>
         </div>
     </header>
 
     <main>
-        <!-- 1. Hero Section with Quick Contact Form -->
         <section id="hero" class="hero-bg py-20 md:py-32 relative flex items-center min-h-[600px]">
             <div class="absolute inset-0 bg-gray-900 opacity-65"></div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-start lg:justify-between">
-                <!-- Text Content -->
                 <div class="lg:w-1/2 text-white mb-12 lg:mb-0">
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
                         Name <br> Immigration Consulting
@@ -75,27 +55,22 @@
                     </div>
                 </div>
 
-                <!-- Quick Contact Form -->
                 <div class="lg:w-5/12 p-6 md:p-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-blue-100">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-3">Get In Touch For a Quick Response</h2>
                     <form onsubmit="handleFormSubmit(event, 'Quick Contact Form')">
                         <div class="contact-form-grid">
-                            <!-- First Name -->
                             <div>
                                 <label for="first-name-quick" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
                                 <input type="text" id="first-name-quick" name="firstName" placeholder="Enter First Name" required>
                             </div>
-                            <!-- Last Name -->
                             <div>
                                 <label for="last-name-quick" class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
                                 <input type="text" id="last-name-quick" name="lastName" placeholder="Enter Last Name" required>
                             </div>
-                            <!-- Email -->
                             <div>
                                 <label for="email-quick" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
                                 <input type="email" id="email-quick" name="email" placeholder="Enter Email" required>
                             </div>
-                            <!-- Country -->
                             <div>
                                 <label for="country-quick" class="block text-sm font-medium text-gray-700 mb-1">Country of Residence *</label>
                                 <select id="country-quick" name="country" required>
@@ -107,7 +82,6 @@
                                 </select>
                             </div>
                         </div>
-                        <!-- Phone Number -->
                         <div class="mt-6">
                             <label for="phone-quick" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
                             <div class="flex phone-input-group">
@@ -123,7 +97,6 @@
             </div>
         </section>
 
-        <!-- 2. Statistics Bar -->
         <section class="py-12 bg-gray-50 border-b border-gray-200">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-extrabold text-gray-900 mb-10">Best Gateway to Canada</h2>
@@ -152,11 +125,9 @@
             </div>
         </section>
 
-        <!-- 3. What is ICS Section (Two columns, text-left, image-right) -->
         <section id="why-ICS" class="py-16 md:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                    <!-- Text Content -->
                     <div class="md:w-1/2">
                         <h2 class="text-4xl font-extrabold text-gray-900 mb-6">What is IC Services</h2>
                         <p class="text-gray-600 leading-relaxed mb-4">
@@ -171,7 +142,6 @@
                         </div>
                     </div>
                     
-                    <!-- Image -->
                     <div class="md:w-1/2 mt-8 md:mt-0">
                         <img src="https://placehold.co/600x400/eeeeee/333333?text=Professional+Consultation" alt="Consultants reviewing documents" class="w-full h-auto object-cover rounded-2xl shadow-xl border-4 border-white">
                     </div>
@@ -179,16 +149,13 @@
             </div>
         </section>
 
-        <!-- 4. How it works (Two columns, image-left, text-right) -->
         <section class="py-16 md:py-24 bg-gray-100 border-t border-b border-gray-200">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                    <!-- Image -->
                     <div class="md:w-1/2 order-2 md:order-1 mt-8 md:mt-0">
                         <img src="https://placehold.co/600x400/eeeeee/333333?text=Smiling+Client+Consultation" alt="Client being advised by consultant" class="w-full h-auto object-cover rounded-2xl shadow-xl border-4 border-white">
                     </div>
 
-                    <!-- Text Content -->
                     <div class="md:w-1/2 order-1 md:order-2">
                         <h2 class="text-4xl font-extrabold text-gray-900 mb-6">How it works</h2>
                         <p class="text-gray-600 leading-relaxed mb-4">
@@ -206,13 +173,11 @@
             </div>
         </section>
         
-        <!-- 5. ICS Immigration Services -->
         <section id="services" class="py-16 md:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-extrabold text-gray-900 mb-12">ICS Immigration Services</h2>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 text-left">
-                    <!-- Service Column 1: Express Entry -->
                     <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Express Entry</h3>
                         <ul class="space-y-2 text-sm text-gray-600">
@@ -225,7 +190,6 @@
                         </ul>
                     </div>
                     
-                    <!-- Service Column 2: Canada Study Visa -->
                     <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Canada Study Visa</h3>
                         <ul class="space-y-2 text-sm text-gray-600">
@@ -237,7 +201,6 @@
                         </ul>
                     </div>
 
-                    <!-- Service Column 3: Skilled Worker to NOC Code -->
                     <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Skilled Worker - NOC Code</h3>
                         <ul class="space-y-2 text-sm text-gray-600">
@@ -249,7 +212,6 @@
                         </ul>
                     </div>
 
-                    <!-- Service Column 4: Apply PR from Outside Canada -->
                     <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Apply PR from Outside Canada</h3>
                         <ul class="space-y-2 text-sm text-gray-600">
@@ -262,7 +224,6 @@
                         </ul>
                     </div>
 
-                    <!-- Service Column 5: Canada Immigration Draws -->
                     <div class="p-6 bg-white border-t-4 border-blue-600 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Canada Immigration Draws</h3>
                         <ul class="space-y-2 text-sm text-gray-600">
@@ -278,7 +239,6 @@
                 <div class="mt-16">
                     <h3 class="text-2xl font-bold text-gray-900 mb-8 border-b border-gray-200 pb-2 inline-block">More Immigration Resources</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                        <!-- Documents -->
                         <div class="p-6 bg-white rounded-xl shadow-md border border-gray-100">
                             <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center"><i data-lucide="file-text" class="w-5 h-5 mr-2 text-blue-600"></i> Documents</h4>
                             <ul class="space-y-2 text-sm text-gray-600">
@@ -289,7 +249,6 @@
                             </ul>
                         </div>
                         
-                        <!-- Immigration Tips -->
                         <div class="p-6 bg-white rounded-xl shadow-md border border-gray-100">
                             <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center"><i data-lucide="lightbulb" class="w-5 h-5 mr-2 text-blue-600"></i> Immigration Tips</h4>
                             <ul class="space-y-2 text-sm text-gray-600">
@@ -300,7 +259,6 @@
                             </ul>
                         </div>
 
-                        <!-- Other Programs -->
                         <div class="p-6 bg-white rounded-xl shadow-md border border-gray-100">
                             <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center"><i data-lucide="building-2" class="w-5 h-5 mr-2 text-blue-600"></i> Other Immigration Programs</h4>
                             <ul class="space-y-2 text-sm text-gray-600">
@@ -315,14 +273,12 @@
             </div>
         </section>
 
-        <!-- 6. Happy Clients / Testimonials -->
         <section id="testimonials" class="py-16 md:py-24 bg-gray-50 border-t border-gray-200">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-extrabold text-gray-900 mb-12">Our Happy Clients</h2>
                 
                 <div class="relative">
                     <div id="testimonial-container" class="flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-6 pt-2">
-                        <!-- Testimonial 1 -->
                         <div class="flex-shrink-0 snap-center w-full sm:w-[80%] md:w-[45%] lg:w-1/3 p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500 transition duration-300 hover:shadow-2xl">
                             <div class="flex items-start space-x-4 mb-4">
                                 <img src="https://placehold.co/50x50/34D399/ffffff?text=FB" alt="Faryal Balkhi" class="w-12 h-12 rounded-full object-cover ring-2 ring-green-500">
@@ -341,7 +297,6 @@
                             <p class="text-gray-600 text-left italic">"I am very glad to be in touch with ICS. ICS's team is doing a great job. I have started my journey with ICS in last year 2023 and till now I have come across multiple wonderful guys, like Ms. Aqsa, Leo and Jackson."</p>
                         </div>
 
-                        <!-- Testimonial 2 -->
                         <div class="flex-shrink-0 snap-center w-full sm:w-[80%] md:w-[45%] lg:w-1/3 p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500 transition duration-300 hover:shadow-2xl">
                             <div class="flex items-start space-x-4 mb-4">
                                 <img src="https://placehold.co/50x50/3B82F6/ffffff?text=JF" alt="Joseph Fynn" class="w-12 h-12 rounded-full object-cover ring-2 ring-blue-500">
@@ -360,7 +315,6 @@
                             <p class="text-gray-600 text-left italic">"Every worker I have spoken to from ICS has made me feel that my PR is assured. Larry, Jackson and the others are very nice, polite and professional. They have given me every information I need for a successful application and have also answered all my questions."</p>
                         </div>
 
-                        <!-- Testimonial 3 -->
                         <div class="flex-shrink-0 snap-center w-full sm:w-[80%] md:w-[45%] lg:w-1/3 p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500 transition duration-300 hover:shadow-2xl">
                             <div class="flex items-start space-x-4 mb-4">
                                 <img src="https://placehold.co/50x50/EF4444/ffffff?text=KM" alt="Kibrom Menasbo" class="w-12 h-12 rounded-full object-cover ring-2 ring-red-500">
@@ -379,7 +333,6 @@
                             <p class="text-gray-600 text-left italic">"Your team is always prompt, professional, and goes above and beyond to address any queries or concerns I may have. The knowledge and expertise demonstrated by your staff is truly commendable."</p>
                         </div>
 
-                        <!-- Testimonial 4 (For scrolling demo) -->
                         <div class="flex-shrink-0 snap-center w-full sm:w-[80%] md:w-[45%] lg:w-1/3 p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500 transition duration-300 hover:shadow-2xl">
                             <div class="flex items-start space-x-4 mb-4">
                                 <img src="https://placehold.co/50x50/F59E0B/ffffff?text=AS" alt="Alex Smith" class="w-12 h-12 rounded-full object-cover ring-2 ring-yellow-500">
@@ -399,7 +352,6 @@
                         </div>
                     </div>
 
-                    <!-- Scroll Arrows (Desktop/Tablet) -->
                     <button onclick="scrollTestimonials(-1)" class="absolute top-1/2 left-0 md:-left-6 transform -translate-y-1/2 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition hidden sm:block z-20">
                         <i data-lucide="arrow-left" class="w-5 h-5"></i>
                     </button>
@@ -410,13 +362,11 @@
             </div>
         </section>
 
-        <!-- 7. Contact Us Section (Address on left, Detailed Form on right) -->
         <section id="contact-us" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-gray-900 mb-12 border-b-4 border-blue-600 pb-3 inline-block">Contact Us</h2>
                 
                 <div class="flex flex-col lg:flex-row gap-12">
-                    <!-- Contact Details -->
                     <div class="lg:w-1/3 space-y-8 p-6 bg-gray-50 rounded-2xl shadow-xl h-full border border-gray-200">
                         <div class="space-y-4">
                             <h3 class="text-2xl font-bold text-gray-800 flex items-center mb-4 border-b border-gray-300 pb-3">
@@ -445,27 +395,22 @@
                         </div>
                     </div>
 
-                    <!-- Detailed Consultation Form -->
                     <div class="lg:w-2/3 p-6 md:p-8 bg-white rounded-2xl shadow-xl border border-gray-200">
                         <h3 class="text-3xl font-bold text-gray-800 mb-8">Book Your Consultation</h3>
                         <form onsubmit="handleFormSubmit(event, 'Detailed Consultation Form')">
                             <div class="contact-form-grid">
-                                <!-- First Name -->
                                 <div>
                                     <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
                                     <input type="text" id="first-name" name="firstName" placeholder="Enter First Name" required>
                                 </div>
-                                <!-- Last Name -->
                                 <div>
                                     <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
                                     <input type="text" id="last-name" name="lastName" placeholder="Enter Last Name" required>
                                 </div>
-                                <!-- Current Age -->
                                 <div>
                                     <label for="age" class="block text-sm font-medium text-gray-700 mb-1">Current Age *</label>
                                     <input type="number" id="age" name="age" placeholder="Age" required>
                                 </div>
-                                <!-- English Proficiency -->
                                 <div>
                                     <label for="english-proficiency" class="block text-sm font-medium text-gray-700 mb-1">English Proficiency Level *</label>
                                     <select id="english-proficiency" name="englishProficiency" required>
@@ -476,7 +421,6 @@
                                         <option>Below CLB 5 (Needs Improvement)</option>
                                     </select>
                                 </div>
-                                <!-- Education -->
                                 <div>
                                     <label for="education" class="block text-sm font-medium text-gray-700 mb-1">Education *</label>
                                     <select id="education" name="education" required>
@@ -487,22 +431,18 @@
                                         <option>Diploma/Certificate</option>
                                     </select>
                                 </div>
-                                <!-- Total Work Experience -->
                                 <div>
                                     <label for="work-experience" class="block text-sm font-medium text-gray-700 mb-1">Total Work Experience (Years) *</label>
                                     <input type="number" id="work-experience" name="workExperience" placeholder="Years of Experience" required>
                                 </div>
-                                <!-- Occupation -->
                                 <div>
                                     <label for="occupation" class="block text-sm font-medium text-gray-700 mb-1">Occupation *</label>
                                     <input type="text" id="occupation" name="occupation" placeholder="Current Occupation (NOC Code if known)" required>
                                 </div>
-                                <!-- Email -->
                                 <div>
                                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
                                     <input type="email" id="email" name="email" placeholder="Enter Email" required>
                                 </div>
-                                <!-- Country of Residence -->
                                 <div>
                                     <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country of Residence *</label>
                                     <select id="country" name="country" required>
@@ -513,7 +453,6 @@
                                         <option value="AE">UAE</option>
                                     </select>
                                 </div>
-                                <!-- Income Band -->
                                 <div>
                                     <label for="income-band" class="block text-sm font-medium text-gray-700 mb-1">Income Band (per month) *</label>
                                     <select id="income-band" name="incomeBand" required>
@@ -525,7 +464,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- Phone Number (Full Width) -->
                             <div class="mt-6">
                                 <label for="phone-full" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
                                 <div class="flex phone-input-group">
@@ -543,7 +481,6 @@
             </div>
         </section>
 
-        <!-- Form Submission Modal -->
         <div id="status-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex items-center justify-center opacity-0 transition-opacity duration-300" onclick="closeModal(event)">
             <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center transform scale-100 transition-transform duration-300" onclick="event.stopPropagation()">
                 <div id="modal-icon" class="mb-4 flex justify-center">
@@ -557,12 +494,10 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 border-b border-gray-700 pb-8 mb-8">
                 
-                <!-- Col 1: Logo & Social -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-2">
                         <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
@@ -580,7 +515,6 @@
                     </div>
                 </div>
 
-                <!-- Col 2: Canada Programs -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-blue-400 border-b border-gray-700 pb-1">Canada Programs</h4>
                     <ul class="space-y-2 text-sm">
@@ -592,7 +526,6 @@
                     </ul>
                 </div>
 
-                <!-- Col 3: Useful Links -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-blue-400 border-b border-gray-700 pb-1">Useful Links</h4>
                     <ul class="space-y-2 text-sm">
@@ -605,7 +538,6 @@
                     <a href="#" class="mt-6 inline-block text-sm px-4 py-2 border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-gray-900 transition font-semibold">Enquire For Travel Insurance</a>
                 </div>
 
-                <!-- Col 4: Stay In Touch / Newsletter -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-blue-400 border-b border-gray-700 pb-1">Stay Always In Touch</h4>
                     <p class="text-gray-400 text-sm mb-4">Get The Latest Updates on Canadian Immigration.</p>
@@ -620,7 +552,6 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
             <div class="text-center md:flex justify-between items-center text-sm text-gray-500 pt-4 border-t border-gray-800">
                 <p>© 2025 ICS Immigration Consulting. All rights reserved.</p>
                 <div class="mt-2 md:mt-0 space-x-4">
@@ -631,12 +562,12 @@
         </div>
     </footer>
 
-    <!-- WhatsApp/Chat Icons (Fixed Position) -->
-    <!-- <a href="https://wa.me/18007951352" target="_blank" class="fixed bottom-6 right-6 p-3 bg-green-500 text-white rounded-full shadow-xl hover:bg-green-600 transition z-50 transform hover:scale-110">
-        <i data-lucide="whatsapp" class="w-6 h-6"></i>
-    </a> -->
+    <a href="https://wa.me/18007951352" target="_blank" class="fixed bottom-6 right-6 p-3 bg-green-500 text-white rounded-full shadow-xl hover:bg-green-600 transition z-50 transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12.04 2.162c-5.46 0-9.927 4.468-9.927 9.928 0 1.583.39 3.069 1.127 4.398L.965 21.68l5.242-1.378c1.246.68 2.646 1.05 4.103 1.05h.005c5.457 0 9.928-4.47 9.928-9.928.001-5.46-4.47-9.927-9.928-9.927zm3.177 14.86c-.225.132-.519.2-.746.2-.236 0-.61-.09-.909-.187-.82-.257-2.026-.827-2.993-1.638-.175-.145-.37-.282-.49-.427-.417-.514-1.282-1.78-.96-2.502.321-.722.995-.91.895-.92s-.652-.164-1.045-.436-.889-1.096-.913-1.55c-.024-.455.334-.73.469-.877.135-.147.3-.175.435-.175h.412c.117 0 .343.012.525.437.18.425.626 1.517.653 1.57.027.052.046.118.01.19s-.2.13-.273.187c-.074.058-.155.158-.236.244s-.066.196.074.453c.14.256.467.87.994 1.332.527.462.992.656 1.117.702.126.045.298.038.452-.07.155-.108.683-.815.84-1.02.155-.205.31-.154.512-.08.2.075 1.258.6 1.48 1.056.224.456.224.773.188.877-.035.104-.154.148-.255.207z"/>
+        </svg>
+    </a>
 
-    <!-- Link External JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
